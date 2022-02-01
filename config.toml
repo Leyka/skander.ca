@@ -1,4 +1,34 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "https://skanderca.netlify.app/" # TODO: rename once .ca domain is available
+languageCode = "en-us"
+title = "Skander"
 theme = "cactus"
+
+[params]
+colortheme = "classic"        # dark, light, white, or classic
+css = ["css/custom.css"]
+mainSectionTitle = "Articles"
+mainSection = "articles"
+
+[[params.social]]
+name = "github"
+link = "https://github.com/leyka"
+
+[[params.social]]
+name = "linkedin"
+link = "https://www.linkedin.com/in/monkeywzr/"
+
+# Main menu which appears below site header.
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "Articles"
+url = "/articles"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3

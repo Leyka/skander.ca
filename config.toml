@@ -1,4 +1,4 @@
-baseURL = "https://skanderca.netlify.app/" # TODO: rename once .ca domain is available
+baseURL = "https://skander.ca"
 languageCode = "en-us"
 title = "Skander"
 theme = "cactus"

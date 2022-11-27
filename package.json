@@ -1,0 +1,17 @@
+{
+  "name": "skander.ca",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve --incremental",
+    "build": "eleventy",
+    "make:article": "node ./scripts/make-article.js"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy-plugin-rss": "^1.2.0"
+  }
+}

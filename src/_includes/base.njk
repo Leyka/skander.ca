@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="{{ meta.lang }}">
+  {% include "head.njk" %}
+  <body>
+    <header>
+      <h1>{{ title }}</h1>
+    </header>
+    <main>
+      <p>{{ content | safe }}</p>
+    </main>
+    {% include "footer.njk" %}
+  </body>
+</html>

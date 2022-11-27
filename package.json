@@ -5,13 +5,15 @@
   "scripts": {
     "start": "eleventy --serve --incremental",
     "build": "eleventy",
+    "clean": "rimraf dist",
     "make:article": "node ./scripts/make-article.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "esbuild": "^0.15.15",
-    "esbuild-sass-plugin": "^2.4.1"
+    "esbuild-sass-plugin": "^2.4.1",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
     "lodash": "^4.17.21"

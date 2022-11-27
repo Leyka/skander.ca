@@ -1,28 +1,20 @@
 {% set absolutePageUrl %}{{ page.url | url | absoluteUrl(meta.url) }}{% endset %}
-
 <head>
   {# General #}
   <title>{{ title }}</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="title" content="{{ title or meta.title }}" />
-  <meta name="description" content="{{ description or meta.description }}" />
-  <meta name="author" content="{{ meta.author }}" />
-  <link rel="canonical" href="{{ absolutePageUrl }}" />
-  {# CSS #}
-  <link rel="stylesheet" href="style.css" />
-  {# Open Graph #}
-  <meta property="og:title" content="{{ title or meta.title }}" />
-  <meta property="og:description" content="{{ description or meta.description }}" />
-  <meta property="og:site_name" content="{{ meta.title }}" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ absolutePageUrl }}" />
-  {# Favicon #}
-  {# RSS #}
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="title" content="{{ title or meta.title }}"/>
+  <meta name="description" content="{{ description or meta.description }}"/>
+  <meta name="author" content="{{ meta.author }}"/>
   <link
-    type="application/atom+xml"
-    rel="alternate"
-    href="{{ meta.url }}/feed.xml"
-    title="{{ meta.title }}"
-  />
+  rel="canonical" href="{{ absolutePageUrl }}"/> {# Open Graph #}
+  <meta property="og:title" content="{{ title or meta.title }}"/>
+  <meta property="og:description" content="{{ description or meta.description }}"/>
+  <meta property="og:site_name" content="{{ meta.title }}"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="{{ absolutePageUrl }}"/> {# Favicon  #}
+  {# CSS #} <link
+  rel="stylesheet" href="{{ "/assets/css/app.css" | url }}"/> {# RSS #}
+  <link type="application/atom+xml" rel="alternate" href="{{ meta.url }}/feed.xml" title="{{ meta.title }}"/>
 </head>

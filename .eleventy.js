@@ -5,6 +5,7 @@ const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 const filters = require('./src/libs/eleventy/filters');
+const transforms = require('./src/libs/eleventy/transforms');
 
 const iProdEnv = [process.env.NODE_ENV, process.env.ELEVENTY_ENV].includes('production');
 
@@ -17,6 +18,13 @@ module.exports = function (config) {
   Object.keys(filters).forEach((filterName) => {
     config.addFilter(filterName, filters[filterName]);
   });
+
+  // Transforms when production
+  if (iProdEnv) {
+    Object.keys(transforms).forEach((transformName) => {
+      config.addTransform(transformName, transforms[transformName]);
+    });
+  }
 
   // Sass => CSS
   config.on('eleventy.before', () => {

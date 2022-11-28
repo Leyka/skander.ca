@@ -1,6 +1,9 @@
 const esbuild = require('esbuild');
 const sass = require('esbuild-sass-plugin');
+
 const pluginRss = require('@11ty/eleventy-plugin-rss');
+const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+
 const filters = require('./libs/eleventy/filters');
 
 const iProdEnv = [process.env.NODE_ENV, process.env.ELEVENTY_ENV].includes('production');
@@ -8,6 +11,7 @@ const iProdEnv = [process.env.NODE_ENV, process.env.ELEVENTY_ENV].includes('prod
 module.exports = function (config) {
   // Plugins
   config.addPlugin(pluginRss);
+  config.addPlugin(pluginSyntaxHighlight);
 
   // Filters
   Object.keys(filters).forEach((filterName) => {
@@ -37,6 +41,9 @@ module.exports = function (config) {
     });
   });
   config.addWatchTarget('./src/assets/js');
+
+  // Add vendor assets to the dist folder
+  config.addPassthroughCopy('./src/assets/vendors/**');
 
   return {
     dir: {

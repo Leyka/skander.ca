@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "start": "eleventy --serve --incremental",
+    "start": "npm run clean && eleventy --serve --incremental",
     "build": "ELEVENTY_ENV=production npm run clean && eleventy",
     "make:article": "node ./scripts/make-article.js"
   },

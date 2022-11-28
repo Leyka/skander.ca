@@ -4,7 +4,7 @@ const sass = require('esbuild-sass-plugin');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
-const filters = require('./libs/eleventy/filters');
+const filters = require('./src/libs/eleventy/filters');
 
 const iProdEnv = [process.env.NODE_ENV, process.env.ELEVENTY_ENV].includes('production');
 

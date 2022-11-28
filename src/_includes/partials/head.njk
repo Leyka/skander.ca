@@ -1,0 +1,19 @@
+{% set absolutePageUrl %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
+<head>
+  <title>{{ title }}</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="title" content="{{ title or site.title }}"/>
+  <meta name="description" content="{{ description or site.description }}"/>
+  <meta name="author" content="{{ site.author }}"/>
+  <meta property="og:title" content="{{ title or site.title }}"/>
+  <meta property="og:description" content="{{ description or site.description }}"/>
+  <meta property="og:site_name" content="{{ site.title }}"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="{{ absolutePageUrl }}"/>
+  <link rel="stylesheet" href="{{ "/assets/main.css" | url }}"/>
+  <link rel="stylesheet" href="{{ "/assets/vendors/prism/prism-theme.css" | url }}"/>
+  <link rel="canonical" href="{{ absolutePageUrl }}"/>
+  <link type="application/atom+xml" rel="alternate" href="{{ site.url }}/feed.xml" title="{{ site.title }}"/>
+  <script src="{{ "/assets/bundle.js" | url }}" defer></script>
+</head>

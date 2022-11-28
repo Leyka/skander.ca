@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ meta.lang }}">
-  {% include "head.njk" %}
+<html lang="{{ site.lang }}">
+  {% include "partials/head.njk" %}
   <body>
     <header>
       <h1>{{ title }}</h1>
@@ -8,6 +8,6 @@
     <main>
       <p>{{ content | safe }}</p>
     </main>
-    {% include "footer.njk" %}
+    {% include "partials/footer.njk" %}
   </body>
 </html>

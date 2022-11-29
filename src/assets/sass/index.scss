@@ -1,0 +1,28 @@
+@import 'utils/reset';
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: 16px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  width: 720px;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+main {
+  flex-grow: 1;
+}

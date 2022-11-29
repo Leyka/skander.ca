@@ -29,7 +29,7 @@ module.exports = function (config) {
   // Sass => CSS
   config.on('eleventy.before', () => {
     return esbuild.build({
-      entryPoints: ['src/assets/sass/app.scss'],
+      entryPoints: ['src/assets/sass/index.scss'],
       outfile: 'dist/assets/main.css',
       minify: iProdEnv,
       sourcemap: iProdEnv,

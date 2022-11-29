@@ -17,7 +17,7 @@ body {
   flex-direction: column;
   align-items: stretch;
 
-  width: 720px;
+  max-width: 720px;
   min-height: 100%;
   margin: 0 auto;
   padding: 0 1rem;
@@ -25,4 +25,11 @@ body {
 
 main {
   flex-grow: 1;
+  text-align: justify;
+}
+
+main,
+header,
+footer {
+  flex-shrink: 0;
 }

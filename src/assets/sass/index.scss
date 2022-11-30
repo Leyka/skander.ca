@@ -2,10 +2,10 @@
 @import 'utils/reset';
 @import 'utils/variables';
 @import 'utils/mixins';
-
 // ~ layout ~
 @import 'layout';
 // ~ base ~
 @import 'base/typo';
 // ~ components ~
+@import 'components/nav';
 @import 'components/header';

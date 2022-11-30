@@ -1,6 +1,10 @@
 @mixin dark-mode {
   background-color: $color-dark;
   color: $color-light;
+
+  a {
+    color: lighten($link-color, 20%);
+  }
 }
 
 @mixin light-mode {

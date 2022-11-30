@@ -27,5 +27,11 @@ p {
 }
 
 a {
-  color: $link-color;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+
+  &:hover,
+  &:visited {
+    color: darken($link-color, 10%);
+  }
 }

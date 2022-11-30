@@ -12,11 +12,13 @@ module.exports = {
     formats = IMAGE_FORMATS,
     sizes = '100vw',
   ) {
+    console.log({ src, alt, className, widths, formats, sizes });
     const metadata = await Image(src, {
       widths: [...widths, null],
       formats: [...formats, null],
       urlPath: 'src/assets/images',
       outputDir: 'dist/assets/images',
     });
+    console.log({ metadata });
   },
 };

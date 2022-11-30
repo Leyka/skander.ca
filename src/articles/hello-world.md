@@ -18,7 +18,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum effic
 
 ## Phasellus vitae dictum risus
 
-{% image 'big-image.jpg' %}
+{% image '2.jpg', 'hello' %}
 
 Phasellus vitae dictum risus, nec hendrerit lacus. Maecenas bibendum nec magna et dapibus. Ut ullamcorper magna eget nisl fringilla, ac dignissim tellus dignissim. In sagittis condimentum justo, bibendum ornare erat rhoncus eget. Curabitur vehicula iaculis consectetur. Proin id consectetur quam. Praesent consequat diam sem, nec ultrices dui aliquam a. Donec at semper libero. Donec efficitur massa auctor sem sollicitudin imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 

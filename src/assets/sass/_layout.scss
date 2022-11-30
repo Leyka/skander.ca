@@ -1,0 +1,41 @@
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  @include light-mode;
+
+  font-size: $font-size;
+  font-family: $font-sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    @include dark-mode;
+  }
+}
+
+body[data-theme='dark'] {
+  @include dark-mode;
+}
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 1rem 0;
+  max-width: 720px;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+main,
+header,
+footer {
+  flex-shrink: 0;
+}

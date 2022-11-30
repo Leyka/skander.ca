@@ -1,0 +1,9 @@
+@mixin dark-mode {
+  background-color: $color-dark;
+  color: $color-light;
+}
+
+@mixin light-mode {
+  background-color: $color-light;
+  color: $color-dark;
+}

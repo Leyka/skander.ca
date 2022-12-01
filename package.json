@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "start": "npm run clean && eleventy --serve --incremental",
-    "build": "ELEVENTY_ENV=production npm run clean && eleventy",
+    "build": "npm run clean && ELEVENTY_ENV=production eleventy",
     "make:article": "node ./scripts/make-article.js"
   },
   "devDependencies": {

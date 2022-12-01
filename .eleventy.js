@@ -7,7 +7,7 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const filters = require('./src/libs/eleventy/filters');
 const transforms = require('./src/libs/eleventy/transforms');
 
-const iProdEnv = [process.env.NODE_ENV, process.env.ELEVENTY_ENV].includes('production');
+const IS_PROD_ENV = [process.env.NODE_ENV, process.env.ELEVENTY_ENV].includes('production');
 
 module.exports = function (config) {
   // Plugins
@@ -20,7 +20,7 @@ module.exports = function (config) {
   });
 
   // Transforms when production
-  if (iProdEnv) {
+  if (IS_PROD_ENV) {
     Object.keys(transforms).forEach((transformName) => {
       config.addTransform(transformName, transforms[transformName]);
     });
@@ -31,8 +31,8 @@ module.exports = function (config) {
     return esbuild.build({
       entryPoints: ['src/assets/sass/index.scss'],
       outfile: 'dist/assets/main.css',
-      minify: iProdEnv,
-      sourcemap: iProdEnv,
+      minify: IS_PROD_ENV,
+      sourcemap: IS_PROD_ENV,
       plugins: [sass.sassPlugin()],
     });
   });
@@ -44,8 +44,8 @@ module.exports = function (config) {
       entryPoints: ['src/assets/js/index.js'],
       outfile: 'dist/assets/bundle.js',
       bundle: true,
-      minify: iProdEnv,
-      sourcemap: iProdEnv,
+      minify: IS_PROD_ENV,
+      sourcemap: IS_PROD_ENV,
     });
   });
   config.addWatchTarget('./src/assets/js');

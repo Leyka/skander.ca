@@ -5,20 +5,22 @@ body {
 }
 
 body {
-  @include light-mode;
-
   font-size: $font-size;
   font-family: $font-sans-serif;
+
+  &[data-theme='dark'] {
+    @include dark-mode;
+  }
+
+  &[data-theme='light'] {
+    @include light-mode;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   body {
     @include dark-mode;
   }
-}
-
-body[data-theme='dark'] {
-  @include dark-mode;
 }
 
 .main-layout {

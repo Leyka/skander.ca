@@ -4,10 +4,10 @@ const isDeviceDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matc
 export function initTheme() {
   const localTheme = localStorage.getItem('theme');
 
-  if (localTheme === 'dark' || isDeviceDarkTheme) {
-    setDarkTheme();
+  if (localTheme) {
+    localTheme === 'dark' ? setDarkTheme() : setLightTheme();
   } else {
-    setLightTheme();
+    isDeviceDarkTheme ? setDarkTheme() : setLightTheme();
   }
 
   registerEventsToggleTheme();
@@ -39,7 +39,7 @@ function setDarkTheme() {
 }
 
 function setLightTheme() {
-  document.body.removeAttribute('data-theme');
+  document.body.setAttribute('data-theme', 'light');
   localStorage.setItem('theme', 'light');
   buttonToggleTheme.innerHTML = 'Dark mode';
 }

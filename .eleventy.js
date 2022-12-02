@@ -46,9 +46,11 @@ module.exports = function (config) {
       bundle: true,
       minify: IS_PROD_ENV,
       sourcemap: IS_PROD_ENV,
+      drop: IS_PROD_ENV ? ['console', 'debugger'] : [],
     });
   });
   config.addWatchTarget('./src/assets/js');
+  config.addPassthroughCopy('./src/assets/js/service-worker.js');
 
   // Add vendor assets to the dist folder
   config.addPassthroughCopy('./src/assets/vendors/**');

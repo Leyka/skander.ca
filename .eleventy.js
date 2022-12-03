@@ -50,7 +50,6 @@ module.exports = function (config) {
     });
   });
   config.addWatchTarget('./src/assets/js');
-  config.addPassthroughCopy('./src/assets/js/service-worker.js');
 
   // Add vendor assets to the dist folder
   config.addPassthroughCopy('./src/assets/vendors/**');

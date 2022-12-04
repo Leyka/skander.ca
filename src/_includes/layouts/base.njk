@@ -2,7 +2,7 @@
 <html lang="{{ site.lang }}">
   {% include "partials/head.njk" %}
   <body>
-    <div class="main-layout">
+    <div class="container">
       {% include "partials/nav.njk" %}
       <header>
         <h1>{{ title }}</h1>
@@ -12,5 +12,6 @@
       </main>
       {% include "partials/footer.njk" %}
     </div>
+    {% include "partials/script.njk" %}
   </body>
 </html>

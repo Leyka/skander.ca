@@ -1,5 +1,8 @@
-const buttonToggleTheme = document.querySelector('.btn-toggle-theme');
 const isDeviceDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+const buttonThemeToggle = document.querySelector('.icon-theme');
+const darkIcon = document.querySelector('.icon-dark');
+const LightIcon = document.querySelector('.icon-light');
 
 export function initTheme() {
   const localTheme = localStorage.getItem('theme');
@@ -15,7 +18,8 @@ export function initTheme() {
 
 function registerEventsToggleTheme() {
   // Manual trigger
-  buttonToggleTheme.addEventListener('click', (e) => {
+  buttonThemeToggle.addEventListener('click', (e) => {
+    console.log('clicked!');
     e.preventDefault();
 
     const theme = localStorage.getItem('theme');
@@ -35,11 +39,15 @@ function registerEventsToggleTheme() {
 function setDarkTheme() {
   document.body.setAttribute('data-theme', 'dark');
   localStorage.setItem('theme', 'dark');
-  buttonToggleTheme.innerHTML = 'Light mode';
+
+  darkIcon.classList.add('hidden');
+  LightIcon.classList.remove('hidden');
 }
 
 function setLightTheme() {
   document.body.setAttribute('data-theme', 'light');
   localStorage.setItem('theme', 'light');
-  buttonToggleTheme.innerHTML = 'Dark mode';
+
+  darkIcon.classList.remove('hidden');
+  LightIcon.classList.add('hidden');
 }

@@ -5,6 +5,16 @@
   a {
     color: lighten($link-color, 20%);
   }
+
+  nav {
+    background-color: $color-dark;
+
+    .nav__logo a,
+    .nav__actions a,
+    .nav__actions svg {
+      color: $color-light;
+    }
+  }
 }
 
 @mixin light-mode {

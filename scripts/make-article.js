@@ -7,11 +7,12 @@ const [, , ...titleRaw] = process.argv;
 
 // Set: Article Path
 const rootDir = path.resolve(__dirname, '..');
-const articlesDir = path.join(rootDir, 'src', 'articles');
-const articleFile = `${kebabCase(titleRaw)}.md`;
-const articlePath = path.join(articlesDir, articleFile);
+const allArticlesDir = path.join(rootDir, 'src', 'articles');
+
+const article = `${kebabCase(titleRaw)}`;
+const articlePath = path.join(allArticlesDir, article, `${article}.md`);
 if (fs.existsSync(articlePath)) {
-  console.error(`Error: Article with file name "${articleFile}" already exists`);
+  console.error(`Error: Article already exists at ${articlePath}`);
   process.exit(1);
 }
 
@@ -24,5 +25,6 @@ title: ${title}
 `;
 
 // Write: file
+fs.mkdirSync(path.join(allArticlesDir, article));
 fs.writeFileSync(articlePath, content);
 console.log(`Created article: ${articlePath}`);

@@ -10,8 +10,6 @@ h5 {
 h1 {
   font-size: 2.5rem;
   line-height: 3rem;
-  border-bottom: 1px solid $color-border;
-  padding-bottom: 10px;
 }
 h2 {
   font-size: 2rem;
@@ -33,5 +31,9 @@ a {
   &:hover,
   &:visited {
     color: darken($link-color, 10%);
+  }
+
+  &:hover {
+    text-decoration: underline;
   }
 }

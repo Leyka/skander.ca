@@ -19,7 +19,6 @@ export function initTheme() {
 function registerEventsToggleTheme() {
   // Manual trigger
   buttonThemeToggle.addEventListener('click', (e) => {
-    console.log('clicked!');
     e.preventDefault();
 
     const theme = localStorage.getItem('theme');

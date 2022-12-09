@@ -1,4 +1,7 @@
 {
   "layout": "layouts/base",
-  "tags": "articles"
+  "tags": "articles",
+  "eleventyNavigation": {
+    "key": "Articles"
+  }
 }

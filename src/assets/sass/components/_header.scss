@@ -2,9 +2,19 @@ header {
   padding-top: 2rem;
   padding-bottom: 1rem;
 
-  .meta,
-  a,
-  a:hover {
-    color: $color-grey;
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: $color-dark-grey;
+
+    a {
+      color: $color-dark-grey;
+    }
+
+    svg {
+      color: $color-dark-grey;
+      width: 1rem;
+    }
   }
 }

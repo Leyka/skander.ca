@@ -7,8 +7,12 @@
   }
 
   header {
-    a {
-      color: $color-grey;
+    .meta {
+      color: lighten($color-dark-grey, 20%);
+      a,
+      svg {
+        color: lighten($color-dark-grey, 20%);
+      }
     }
   }
 

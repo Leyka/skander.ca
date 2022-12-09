@@ -4,6 +4,7 @@ const markdownIt = require('markdown-it');
 
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const pluginNavigation = require('@11ty/eleventy-navigation');
 const pluginTimeToRead = require('eleventy-plugin-time-to-read');
 
 const filters = require('./src/libs/eleventy/filters');
@@ -15,6 +16,7 @@ module.exports = function (config) {
   // Plugins
   config.addPlugin(pluginRss);
   config.addPlugin(pluginSyntaxHighlight);
+  config.addPlugin(pluginNavigation);
   config.addPlugin(pluginTimeToRead, {
     speed: '250 words per minute',
   });

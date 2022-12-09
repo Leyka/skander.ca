@@ -4,6 +4,8 @@ date: 2022-12-01
 draft: true
 ---
 
+{% image '1.jpg', 'one' %}
+
 ## Hi World
 
 ```csharp
@@ -32,6 +34,8 @@ $ cd ..
 ```
 
 Cras venenatis, elit nec sagittis luctus, diam elit luctus turpis, sed feugiat erat dui non felis. Suspendisse nec risus ac metus sagittis elementum. In pharetra interdum dapibus. Maecenas ornare metus in nulla eleifend eleifend. Nulla non rhoncus leo. Praesent consequat est id sapien iaculis ornare.
+
+{% image '2.jpg', 'one' %}
 
 ### Aliquam sed magna viverra
 

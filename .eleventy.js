@@ -1,7 +1,9 @@
+const path = require('node:path');
 const esbuild = require('esbuild');
 const sass = require('esbuild-sass-plugin');
 const markdownIt = require('markdown-it');
 
+const Image = require('@11ty/eleventy-img');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const pluginNavigation = require('@11ty/eleventy-navigation');
@@ -9,6 +11,7 @@ const pluginTimeToRead = require('eleventy-plugin-time-to-read');
 
 const filters = require('./src/libs/eleventy/filters');
 const transforms = require('./src/libs/eleventy/transforms');
+// const shortcodes = require('./src/libs/eleventy/shortcodes');
 
 const IS_PROD_ENV = [process.env.NODE_ENV, process.env.ELEVENTY_ENV].includes('production');
 
@@ -43,6 +46,34 @@ module.exports = function (config) {
       typographer: true,
     }),
   );
+
+  function imageShortcode(src, alt, sizes = '(min-width: 1024px) 100vw, 50vw') {
+    console.log(`Generating image(s) from:  ${src}`);
+    let imageSrc = `${path.dirname(this.page.inputPath)}/${src}`;
+    console.log({ imageSrc });
+    let options = {
+      widths: [300, 800, 1600],
+      formats: ['webp', 'jpeg'],
+      urlPath: this.page.url,
+      outputDir: path.dirname(this.page.outputPath),
+    };
+
+    // generate images
+    console.log('ok', imageSrc, options);
+    Image(imageSrc, options);
+
+    let imageAttributes = {
+      alt,
+      sizes,
+      loading: 'lazy',
+      decoding: 'async',
+    };
+    // get metadata
+    metadata = Image.statsSync(imageSrc, options);
+    console.log({ metadata });
+    return Image.generateHTML(metadata, imageAttributes);
+  }
+  config.addShortcode('image', imageShortcode);
 
   // Sass => CSS
   config.on('eleventy.before', () => {

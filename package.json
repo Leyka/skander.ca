@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf dist",
-    "start": "npm run clean && eleventy --serve --incremental",
-    "build": "npm run clean && ELEVENTY_ENV=production eleventy",
+    "start": "eleventy --serve --incremental",
+    "build": "ELEVENTY_ENV=production eleventy",
     "make:article": "node ./scripts/make-article.js"
   },
   "devDependencies": {

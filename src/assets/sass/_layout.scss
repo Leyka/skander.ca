@@ -4,10 +4,7 @@ body {
   height: 100%;
 }
 
-body {
-  font-size: $font-size;
-  font-family: $font-sans-serif;
-
+html {
   &[data-theme='dark'] {
     @include dark-mode;
   }
@@ -18,9 +15,14 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
+  html {
     @include dark-mode;
   }
+}
+
+body {
+  font-size: $font-size;
+  font-family: $font-sans-serif;
 }
 
 .container {

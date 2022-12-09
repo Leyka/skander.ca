@@ -36,7 +36,7 @@ function registerEventsToggleTheme() {
 }
 
 function setDarkTheme() {
-  document.body.setAttribute('data-theme', 'dark');
+  document.documentElement.setAttribute('data-theme', 'dark');
   localStorage.setItem('theme', 'dark');
 
   darkIcon.classList.add('hidden');
@@ -44,7 +44,7 @@ function setDarkTheme() {
 }
 
 function setLightTheme() {
-  document.body.setAttribute('data-theme', 'light');
+  document.documentElement.setAttribute('data-theme', 'light');
   localStorage.setItem('theme', 'light');
 
   darkIcon.classList.remove('hidden');

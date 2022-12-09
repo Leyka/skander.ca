@@ -16,4 +16,9 @@
   <link rel="canonical" href="{{ absolutePageUrl }}"/>
   <link type="application/atom+xml" rel="alternate" href="{{ site.url }}/feed.xml" title="{{ site.title }}"/>
   <script src="{{ "/assets/bundle.js" | url }}" defer></script>
+  <script>
+    if (localStorage.theme) {
+      document.documentElement.setAttribute("data-theme", localStorage.theme);
+    }
+  </script>
 </head>

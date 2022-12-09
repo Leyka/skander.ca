@@ -1,8 +1,10 @@
 const esbuild = require('esbuild');
 const sass = require('esbuild-sass-plugin');
+const markdownIt = require('markdown-it');
 
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const pluginTimeToRead = require('eleventy-plugin-time-to-read');
 
 const filters = require('./src/libs/eleventy/filters');
 const transforms = require('./src/libs/eleventy/transforms');
@@ -13,6 +15,9 @@ module.exports = function (config) {
   // Plugins
   config.addPlugin(pluginRss);
   config.addPlugin(pluginSyntaxHighlight);
+  config.addPlugin(pluginTimeToRead, {
+    speed: '250 words per minute',
+  });
 
   // Filters
   Object.keys(filters).forEach((filterName) => {
@@ -25,6 +30,17 @@ module.exports = function (config) {
       config.addTransform(transformName, transforms[transformName]);
     });
   }
+
+  // Markdown
+  config.setLibrary(
+    'md',
+    markdownIt({
+      html: true,
+      breaks: true,
+      linkify: true,
+      typographer: true,
+    }),
+  );
 
   // Sass => CSS
   config.on('eleventy.before', () => {

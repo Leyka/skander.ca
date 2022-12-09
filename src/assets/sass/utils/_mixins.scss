@@ -6,6 +6,12 @@
     color: lighten($link-color, 20%);
   }
 
+  header {
+    a {
+      color: $color-grey;
+    }
+  }
+
   nav {
     background-color: $color-dark;
 
@@ -15,9 +21,26 @@
       color: $color-light;
     }
   }
+
+  footer {
+    background-color: $color-dark;
+    img {
+      filter: invert(1);
+    }
+  }
 }
 
 @mixin light-mode {
   background-color: $color-light;
   color: $color-dark;
+
+  nav {
+    background-color: $color-light-grey;
+
+    .nav__logo a,
+    .nav__actions a,
+    .nav__actions svg {
+      color: $color-dark;
+    }
+  }
 }

@@ -1,10 +1,10 @@
 header {
   padding-top: 2rem;
-  padding-bottom: 4rem;
+  padding-bottom: 1rem;
 
-  .subtitle {
-    display: block;
-    text-align: center;
+  .meta,
+  a,
+  a:hover {
     color: $color-grey;
   }
 }

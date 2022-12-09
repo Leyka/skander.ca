@@ -18,8 +18,11 @@ if (fs.existsSync(articlePath)) {
 
 // Set: Content
 const title = titleRaw.map(capitalize).join(' ');
+const date = new Date().toISOString().split('T')[0];
 const content = `---
 title: ${title}
+date: ${date}
+draft: true
 ---
 
 `;

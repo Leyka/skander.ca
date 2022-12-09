@@ -38,6 +38,7 @@ p {
 a {
   text-decoration: none;
   transition: color 0.2s ease-in-out;
+  color: darken($link-color, 10%);
 
   &:hover,
   &:visited {

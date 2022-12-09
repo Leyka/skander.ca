@@ -41,6 +41,8 @@ function setDarkTheme() {
 
   darkIcon.classList.add('hidden');
   LightIcon.classList.remove('hidden');
+
+  buttonThemeToggle.title = 'Switch to light theme';
 }
 
 function setLightTheme() {
@@ -49,4 +51,6 @@ function setLightTheme() {
 
   darkIcon.classList.remove('hidden');
   LightIcon.classList.add('hidden');
+
+  buttonThemeToggle.title = 'Switch to dark theme';
 }

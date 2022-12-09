@@ -9,10 +9,15 @@
   header {
     .meta {
       color: lighten($color-dark-grey, 20%);
+
       a,
       svg {
         color: lighten($color-dark-grey, 20%);
       }
+    }
+
+    .summary {
+      color: lighten($color-dark-grey, 20%);
     }
   }
 
@@ -30,6 +35,13 @@
     background-color: $color-dark;
     img {
       filter: contrast(0);
+    }
+  }
+
+  p {
+    code {
+      background-color: $color-dark;
+      color: #50fa7b;
     }
   }
 }
@@ -52,6 +64,13 @@
     background-color: $color-light-grey;
     img {
       filter: contrast(1);
+    }
+  }
+
+  p {
+    code {
+      background-color: $color-light-grey;
+      color: #df1285;
     }
   }
 }

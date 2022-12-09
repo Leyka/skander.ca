@@ -18,7 +18,7 @@ module.exports = function (config) {
   config.addPlugin(pluginSyntaxHighlight);
   config.addPlugin(pluginNavigation);
   config.addPlugin(pluginTimeToRead, {
-    speed: '250 words per minute',
+    speed: '238 words per minute',
   });
 
   // Filters

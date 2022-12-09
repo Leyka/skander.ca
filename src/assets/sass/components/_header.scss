@@ -2,9 +2,14 @@ header {
   padding-top: 2rem;
   padding-bottom: 1rem;
 
+  h1 {
+    text-align: center;
+  }
+
   .meta {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 5px;
     color: $color-dark-grey;
 
@@ -16,5 +21,10 @@ header {
       color: $color-dark-grey;
       width: 1rem;
     }
+  }
+
+  .summary {
+    margin-bottom: 0;
+    color: $color-dark-grey;
   }
 }

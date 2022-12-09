@@ -54,3 +54,10 @@ blockquote {
   border-left: 3px solid #dedede;
   padding-left: 1rem;
 }
+
+code {
+  font-family: $font-mono;
+  padding: 3px;
+  border-radius: 5px;
+  background-color: #eae9e9;
+}

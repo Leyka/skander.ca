@@ -31,11 +31,16 @@
     }
   }
 
+  img.icon {
+    filter: contrast(0);
+
+    &:hover {
+      filter: invert(1);
+    }
+  }
+
   footer {
     background-color: $color-dark;
-    img {
-      filter: contrast(0);
-    }
   }
 
   p {
@@ -60,11 +65,16 @@
     }
   }
 
-  footer {
-    background-color: $color-light-grey;
-    img {
+  img.icon {
+    filter: contrast(0.7);
+
+    &:hover {
       filter: contrast(1);
     }
+  }
+
+  footer {
+    background-color: $color-light-grey;
   }
 
   p {

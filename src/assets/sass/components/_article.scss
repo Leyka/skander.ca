@@ -1,7 +1,19 @@
 article {
   img {
     height: auto;
-    margin: 0 auto;
-    width: 90%;
+    width: 100%;
+    padding: 20px 10px;
+  }
+}
+
+.articles {
+  .articles__header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+
+    .articles__title {
+      margin: 0;
+    }
   }
 }

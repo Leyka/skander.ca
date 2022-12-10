@@ -59,7 +59,6 @@ module.exports = function (
     width: largestImage.width,
     height: largestImage.height,
     alt,
-    loading: 'lazy',
     decoding: 'async',
   });
   const imgHtmlString = `<img ${imgAttributes}>`;

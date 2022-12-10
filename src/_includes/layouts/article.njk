@@ -6,8 +6,7 @@
       {% include "partials/nav.njk" %}
       <header>
         <h1>{{ title }}</h1>
-        <div class="meta">April 23, 2020 -
-          {# <a href="/categories/test">Test Category</a> #}
+        <div class="meta">{{ date | formatDate }} -
           <i data-feather="clock"></i>
           {{ content | timeToRead }}
         </div>

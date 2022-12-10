@@ -44,7 +44,7 @@ body {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: calc($max-width + 20px)) {
   .container {
     main,
     header,
